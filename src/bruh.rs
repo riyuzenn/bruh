@@ -89,7 +89,10 @@ impl BruhCommit {
             "{}: {}", 
                 self.items[commit_type].split(":")
                     .collect::<Vec<&str>>()[0], 
-                self.capitalize(commit_msg.as_str())
+                
+                // Uncomment if you want to capitalize every message
+                // self.capitalize(commit_msg.as_str())
+                commit_msg.as_str()
         );
         
         let cmd = Command::new("git")
@@ -103,19 +106,6 @@ impl BruhCommit {
             .with_prompt("Do you want to push?")
             .interact()?;
         
-        if push {
-            let cmd = Command::new("git")
-                .arg("push")
-                .output()
-                .expect("Failed to execute the command");
-
-            if cmd.stderr.is_empty() {
-                println!("{}", String::from_utf8(cmd.stderr).unwrap());
-            } else {
-                println!("{}", String::from_utf8(cmd.stdout).unwrap());
-            }
-        } 
-
         Ok(())    
     }
 }
