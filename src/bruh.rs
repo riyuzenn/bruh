@@ -40,6 +40,8 @@ impl BruhCommit {
             .expect("Failed to execute the command");
 
     }
+
+    #[allow(dead_code)]
     fn capitalize(&self, s: &str) -> String {
         let mut c = s.chars();
         match c.next() {
@@ -106,6 +108,13 @@ impl BruhCommit {
             .with_prompt("Do you want to push?")
             .interact()?;
         
+        if push {
+            Command::new("git")
+                .arg("push")
+                .output()
+                .expect("Failed to execute the command");
+        } 
+
         Ok(())    
     }
 }
