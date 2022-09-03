@@ -8,7 +8,7 @@ fn main() {
         String::from("⚒️  fix:   Fix a bug or any errors"),
         String::from("🎨 style: Format or style files"),
         String::from("♻️  ref:   Refactor code"),
-        String::from("📝 doc:  Update any documentation related file")
+        String::from("📝 doc:   Update any doc related")
     ];
 
     let bruh = bruh::BruhCommit::new("Select commit type to be use", item);
