@@ -11,6 +11,7 @@ use std::{
     io::Result,
     path::Path,
 };
+
 pub struct BruhCommit {
     title: String,
     items: Vec<String>
