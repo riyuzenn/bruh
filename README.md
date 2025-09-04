@@ -1,5 +1,5 @@
 ## Conventional commits
-Automatically choose for commit messages. 
+Automated git pushing with conventional commit message template
 
 Usage:
 ```bash
